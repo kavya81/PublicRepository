@@ -1,0 +1,59 @@
+<br>
+<br>
+<form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)" >
+  <div class="form-horizontal">
+    <h4>Edit Employees</h4>
+    <hr />
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="Ename">Employee Name</label>
+      <div class="col-md-10">
+        <label class="control-label col-md-2" for="Ename">{{employee.Ename}}</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="Designation">Designation</label>
+      <div class="col-md-10">
+        <label class="control-label col-md-2" for="Ename">{{employee.Designation}}</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="Mid">Mid</label>
+      <div class="col-md-10">
+              <label class="control-label col-md-2" for="Mid">{{employee.Mid}}</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="Contactno">Contactno</label>
+      <div class="col-md-10">
+        <label class="control-label col-md-2" for="Contactno">{{employee.Contactno}}</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="EmailId">EmailId</label>
+      <div class="col-md-10">
+        <label class="control-label col-md-2" for="EmailId">{{employee.EmailId}}</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="Skillsets">Skillsets</label>
+      <div class="col-md-10">
+        <label class="control-label col-md-2" for="Skillsets">{{employee.Skillsets}}</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Delete" class="btn btn-default" />
+      </div>
+    </div>
+  </div>
+</form>
+<div>
+  <a href="/employee/show">Back to List</a>
+</div>

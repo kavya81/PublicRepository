@@ -1,0 +1,53 @@
+<br>
+<br>
+<form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)" >
+    <div class="form-horizontal">
+        <h4>Tasks</h4>
+        <hr />
+        
+        <div class="form-group">
+            <label class="control-label col-md-2" for="AssignedTo">AssignedTo</label>
+            <div class="col-md-10">
+                <label class="control-label col-md-2" for="AssignedTo">{{task.AssignedTo}}</label>
+              </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="EndDate">EndDate</label>
+            <div class="col-md-10">
+                <label class="control-label col-md-2" for="EndDate">{{task.EndDate}}</label>
+              </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StartDate">StartDate</label>
+            <div class="col-md-10">
+                <label class="control-label col-md-2" for="StartDate">{{task.StartDate}}</label>
+              </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Completion">Completion</label>
+            <div class="col-md-10">
+                <label class="control-label col-md-2" for="Completion">{{task.Completion}}</label>
+              </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="UserStoryId">UserStoryId</label>
+            <div class="col-md-10">
+                <label class="control-label col-md-2" for="UserStoryId">{{task.UserStoryId}}</label>
+              </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a href="/task/show">Back to List</a>
+</div>
+

@@ -1,0 +1,78 @@
+<br>
+<br>
+<form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)" >
+    <div class="form-horizontal">
+        <h4>Tasks</h4>
+        <hr />
+        
+        <div class="form-group">
+            <label class="control-label col-md-2" for="AssignedTo">AssignedTo</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" formControlName="AssignedTo" type="number" value="" />
+            <div *ngIf="formData.controls.AssignedTo.errors && (formData.controls.AssignedTo.dirty || formData.controls.AssignedTo.touched)" class="alert-danger" >
+                <div *ngIf="formData.controls.AssignedTo.errors.required">
+                        Employee Id is required
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="EndDate">EndDate</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" formControlName="EndDate" type="datetime" value="" />
+            <div *ngIf="formData.controls.EndDate.errors && (formData.controls.EndDate.dirty || formData.controls.EndDate.touched)" class="alert-danger" >
+                <div *ngIf="formData.controls.EndDate.errors.required">
+                        EndDate is required
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StartDate">StartDate</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" formControlName="StartDate" type="datetime" value="" />
+            <div *ngIf="formData.controls.StartDate.errors && (formData.controls.StartDate.dirty || formData.controls.StartDate.touched)" class="alert-danger" >
+                <div *ngIf="formData.controls.StartDate.errors.required">
+                        StartDate is required
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Completion">Completion</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" formControlName="Completion" type="datetime" value="" />
+                <div *ngIf="formData.controls.Completion.errors && (formData.controls.Completion.dirty || formData.controls.Completion.touched)" class="alert-danger" >
+                    <div *ngIf="formData.controls.Completion.errors.required">
+                            Completion is required
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="UserStoryId">UserStoryId</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" formControlName="UserStoryId" type="number" value="" />
+            <div *ngIf="formData.controls.UserStoryId.errors && (formData.controls.UserStoryId.dirty || formData.controls.UserStoryId.touched)" class="alert-danger" >
+                <div *ngIf="formData.controls.UserStoryId.errors.required">
+                        UserStoryId is required
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Edit" class="btn btn-default" [disabled]="!formData.valid" />
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a href="/task/show">Back to List</a>
+</div>
+

@@ -1,0 +1,89 @@
+<br>
+<br>
+<form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)" >
+  <div class="form-horizontal">
+    <h4>Edit Employees</h4>
+    <hr />
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="Ename">Employee Name</label>
+      <div class="col-md-10">
+        <input class="form-control text-box single-line" formControlName="Ename"  type="text" value="" />
+         <div *ngIf="formData.controls.Ename.errors && (formData.controls.Ename.dirty || formData.controls.Ename.touched)" class="alert-danger" >
+            <div *ngIf="formData.controls.Ename.errors.required">
+              Name is required
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="Designation">Designation</label>
+      <div class="col-md-10">
+        <input class="form-control text-box single-line" formControlName="Designation" type="text" value="" />
+        <div *ngIf="formData.controls.Designation.errors && (formData.controls.Designation.dirty || formData.controls.Designation.touched)" class="alert-danger" >
+            <div *ngIf="formData.controls.Designation.errors.required">
+                Designation is required
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="Mid">Mid</label>
+      <div class="col-md-10">
+          <select data-val="true" formControlName="Mid" id="Mid" name="Mid">
+              <option *ngFor="let emp of employees" value="{{emp.Eid}}">{{emp.Ename}}</option>
+          </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="Contactno">Contactno</label>
+      <div class="col-md-10">
+        <input class="form-control text-box single-line" formControlName="Contactno" type="text" value="" />
+        <div *ngIf="formData.controls.Contactno.errors && (formData.controls.Contactno.dirty || formData.controls.Contactno.touched)" class="alert-danger" >
+            <div *ngIf="formData.controls.Contactno.errors.required">
+                Contactno is required
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="EmailId">EmailId</label>
+      <div class="col-md-10">
+        <input class="form-control text-box single-line" formControlName="EmailId" type="text" value="" />
+        <div *ngIf="formData.controls.EmailId.errors && (formData.controls.EmailId.dirty || formData.controls.EmailId.touched)" class="alert-danger" >
+            <div *ngIf="formData.controls.EmailId.errors.required">
+              EmailId is required
+            </div>
+            <div *ngIf="formData.controls.EmailId.errors.pattern">
+              EmailId is not valid
+            </div>
+          </div>     
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-2" for="Skillsets">Skillsets</label>
+      <div class="col-md-10">
+        <input class="form-control text-box single-line" formControlName="Skillsets" type="text" value="" />
+        <div *ngIf="formData.controls.Skillsets.errors && (formData.controls.Skillsets.dirty || formData.controls.Skillsets.touched)" class="alert-danger" >
+            <div *ngIf="formData.controls.Skillsets.errors.required">
+                Skillsets is required
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Edit" class="btn btn-default" [disabled]="!formData.value" />
+      </div>
+    </div>
+  </div>
+</form>
+<div>
+  <a href="/employee/show">Back to List</a>
+</div>
